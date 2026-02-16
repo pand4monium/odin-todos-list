@@ -1,0 +1,61 @@
+/* 
+Following are the IDs for reference
+-----------------------------------
+#appName = App Name (ToDos List on top left)
+#profile = Profile tab on Top Right {
+        #profilePicture = Circle picture / Letter
+        #profileName = Username
+    }
+*/
+
+#header {
+    background-color: #99e;
+
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#appName {
+    font-size: 30px;
+    font-weight: bold;
+    
+    align-self: center;
+}
+
+#profile {
+    /* background-color: red; */
+
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+#profilePicture {
+    background-color: paleturquoise;
+
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+
+    /* 
+    THIS IS IF NO PROFILE PICTURE IS ADDED
+    --------------------------------------
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: whitesmoke;
+    /*
+    -------------------------------------
+    */
+}
+
+#profileName {
+    font-size: 20px;
+    font-weight: bold;
+}
