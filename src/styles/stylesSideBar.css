@@ -1,0 +1,40 @@
+/*
+    Following are the IDs for reference
+    -----------------------------------
+    #appName = App Name (ToDos List on top left)
+    #profile = Profile tab on Top Right {
+            #profilePicture = Circle picture / Letter
+            #profileName = Username
+        }
+*/
+
+#sidebar {
+    background-color: red;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar > h2 { 
+    padding: 0px 30px;
+    margin-bottom: 0;
+}
+
+#sidebar > ul {
+    list-style-type: none;
+    padding-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#sidebar > ul > li > button {
+    text-transform: uppercase;
+    width: 200px;
+
+    white-space: normal;
+    word-break: break-word;
+}
