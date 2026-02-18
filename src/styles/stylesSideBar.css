@@ -9,7 +9,7 @@
 */
 
 #sidebar {
-    background-color: red;
+    background-color: #eee;
 
     height: 100%;
 
@@ -17,8 +17,26 @@
     flex-direction: column;
 }
 
-#sidebar > h2 { 
+#sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
     padding: 0px 30px;
+}
+
+#newProject {
+    font-size: 30px;
+    font-weight: bold;
+    width: 40px;
+    aspect-ratio: 1/1;
+
+    align-self: center;
+    border: 0;
+    margin-top: 5px;
+}
+
+#sidebar > div > h2 { 
     margin-bottom: 0;
 }
 

@@ -8,7 +8,10 @@ export const loadSidebar = (appProject) => {
     }, ``)
 
     document.getElementById("sidebar").innerHTML = `
-    <h2> Projects </h2>
+    <div id="sidebar-header">
+        <h2> Projects </h2>
+        <button id="newProject">+</button>
+    </div>
     <ul> ${ulHTML} </ul>
     `;
 }
