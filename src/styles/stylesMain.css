@@ -1,0 +1,32 @@
+/*
+    Following are the IDs for reference
+    -----------------------------------
+    #projectHeader - Display the selected Project and Buttons
+    #projectLine - thin line
+    #TodoMenu - Display all Todo items
+*/
+
+#projectHeader { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 15px;
+}
+
+#projectName {
+    text-transform: uppercase;
+    white-space: normal;
+    word-break: break-word;
+
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#projectLine {
+    width: auto;
+    height: 1px;
+    background-color: darkblue;
+
+    margin: 0px 15px;
+}

@@ -1,5 +1,6 @@
 import { loadHeader } from "./pages/header";
 import { loadSidebar } from "./pages/sidebar";
+import { loadMainBody } from "./pages/mainBody.js";
 
 import { appProjects } from "./class/appProjects.js";
 import { Project } from "./class/Project.js";
@@ -7,6 +8,7 @@ import { Project } from "./class/Project.js";
 import "./styles/styles.css";
 import "./styles/stylesHeader.css";
 import "./styles/stylesSideBar.css";
+import "./styles/stylesMain.css"
 
 const application = new appProjects();
 
@@ -22,3 +24,4 @@ console.log(application.projectList);
 loadHeader();
 
 loadSidebar(application);
+loadMainBody(application)
