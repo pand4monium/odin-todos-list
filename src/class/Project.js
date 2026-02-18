@@ -15,9 +15,12 @@ export class Project {
         let displayHTML = this.todoItems.reduce((arr, item, i) => {
             return arr + `
                 <div class="task-container" id="task-${i}">
-                    <div class="task-title">${item.title}</div>
-                    <div class="task-dueDate">${item.dueDate}</div>
-                    <div class="task-description">${item.description}</div>
+                    <div class="task-details">
+                        <div class="task-title">${item.title}</div>
+                        <div class="task-dueDate">${item.displayDueDate()}</div>
+                        <div class="task-description">${item.description}</div>
+                    </div>
+                    <button class="editTask" id="editTask-${i}">Edit</div>
                 </div>
             `;
         }, ``)

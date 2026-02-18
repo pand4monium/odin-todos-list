@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export class TodoItem {
 
     constructor(title, description, dueDate, priority) {
@@ -7,6 +9,12 @@ export class TodoItem {
         this.priority = priority;
         this.notes = "";
         this.status = 0;
+    }
+
+    displayDueDate() {
+        console.log(typeof this.dueDate)
+        console.log(format(this.dueDate, "E..EEEdo MMM yyyy"))
+        return format(this.dueDate, "EEE, do MMM yyyy")
     }
 
     changeStatus() {

@@ -11,4 +11,8 @@ export class appProjects {
     addProject(project) {
         this.projectList.push(project);
     }
+
+    selectProject(i) {
+        this.selectedProject = this.projectList[i]
+    }
 }

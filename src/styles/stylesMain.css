@@ -45,6 +45,32 @@
 .task-container {
     border: 2px black solid;
     flex: 0 0 0;
-    min-width: 250px;
-    height: 150px;
+    min-width: 220px;
+    min-height: 150px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.editTask {
+    width: 50px;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.task-dueDate {
+    color: gray;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.task-description { 
+    font-size: 12px;
+    white-space: normal;
+    word-break: break-word;
 }

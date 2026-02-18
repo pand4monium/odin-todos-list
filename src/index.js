@@ -5,10 +5,20 @@ import { loadMainBody } from "./pages/mainBody.js";
 import { appProjects } from "./class/appProjects.js";
 import { Project } from "./class/Project.js";
 
+import { format } from "date-fns";
+
 import "./styles/styles.css";
 import "./styles/stylesHeader.css";
 import "./styles/stylesSideBar.css";
-import "./styles/stylesMain.css"
+import "./styles/stylesMain.css";
+import "./styles/stylesNewProject.css";
+
+function loadPage(app) {
+    loadHeader();
+    loadSidebar(app);
+    loadMainBody(app);
+}
+
 
 const application = new appProjects();
 
@@ -19,13 +29,21 @@ console.log("test");
 application.addProject(a1);
 application.addProject(a2);
 application.addProject(a3);
+loadPage(application);
+
+application.selectProject(1);
+loadPage(application);
 
 
-application.selectedProject.addTask("John1", "Happy", new Date(2025, 11, 1), 1);
+
+application.selectedProject.addTask("John1", "Happy buuuuuuuu bucw cqiuvfgkjb ugc   ifj vfg weuigjkhd iguqbfvijb lfabjwojifgiqug  yqvfuhb yqbvcfuh cqodfhqk bhfb qybf oqnbfan oiuqhbf qnbf 8u8g ljqu8fgq iljbojhf gioqjhf nb  gqlfi qblfnk boiaufg qbnfl jbqoiufb q1l1nbpuglijafbv lqkj uqgfoijbqwflmmd  qlc ijh apfu", new Date(2025, 11, 1), 1);
 application.selectedProject.addTask("John2", "Happy", new Date(2025, 12, 1), 2);
 application.selectedProject.addTask("John3", "Happy", new Date(2025, 12, 1), 3);
 
-loadHeader();
+application.selectProject(0);
 
-loadSidebar(application);
-loadMainBody(application)
+loadPage(application);
+application.selectProject(1);
+loadPage(application);
+
+document.getElementById("newProject").showModal();
