@@ -18,4 +18,11 @@ export const loadSidebar = (appProject) => {
     document.getElementById("newProject").addEventListener("click", () => {
         document.getElementById("newProjectModal").style.display = "block";
     })
+
+    appProject.projectList.forEach((project, index) => {
+        document.getElementById(`project-${index}`).addEventListener("click", () => {
+            appProject.selectProject(index);
+            appProject.loadPage();
+        })
+    })
 }
