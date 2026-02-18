@@ -1,6 +1,7 @@
 import { loadHeader } from "./pages/header";
 import { loadSidebar } from "./pages/sidebar";
 import { loadMainBody } from "./pages/mainBody.js";
+import { loadNewProjectModal } from "./modals/newProject.js";
 
 import { appProjects } from "./class/appProjects.js";
 import { Project } from "./class/Project.js";
@@ -12,7 +13,7 @@ import "./styles/stylesHeader.css";
 import "./styles/stylesSideBar.css";
 import "./styles/stylesMain.css";
 import "./styles/stylesNewProject.css";
-import { loadNewProjectModal } from "./modals/newProject.js";
+import "./styles/stylesNewTask.css";
 
 
 const application = new appProjects();

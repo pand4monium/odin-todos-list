@@ -3,6 +3,7 @@ import { loadHeader } from "../pages/header.js";
 import { loadSidebar } from "../pages/sidebar.js";
 import { loadMainBody } from "../pages/mainBody.js";
 import { loadNewProjectModal } from "../modals/newProject.js";
+import { loadNewTaskModal } from "../modals/newTask.js";
 
 export class appProjects {
 
@@ -24,5 +25,6 @@ export class appProjects {
         loadSidebar(this);
         loadMainBody(this);
         loadNewProjectModal(this);
+        loadNewTaskModal(this);
     }
 }
