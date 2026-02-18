@@ -25,8 +25,6 @@ export class Project {
             `;
         }, ``)
 
-        console.log(displayHTML);
-
         return displayHTML;
     }
 }

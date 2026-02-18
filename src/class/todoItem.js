@@ -12,8 +12,6 @@ export class TodoItem {
     }
 
     displayDueDate() {
-        console.log(typeof this.dueDate)
-        console.log(format(this.dueDate, "E..EEEdo MMM yyyy"))
         return format(this.dueDate, "EEE, do MMM yyyy")
     }
 

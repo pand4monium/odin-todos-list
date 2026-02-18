@@ -7,7 +7,5 @@ export const loadMainBody = (appProject) => {
             <button id="deleteProject"> DELETE </button>
         </div>
     `
-    console.log(appProject.selectedProject.displayTask());
-    console.log(document.getElementById("TodoMenu"));
     document.getElementById("TodoMenu").innerHTML = appProject.selectedProject.displayTask();
 }

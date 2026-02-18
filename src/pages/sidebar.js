@@ -14,4 +14,8 @@ export const loadSidebar = (appProject) => {
     </div>
     <ul> ${ulHTML} </ul>
     `;
+
+    document.getElementById("newProject").addEventListener("click", () => {
+        document.getElementById("newProjectModal").style.display = "block";
+    })
 }

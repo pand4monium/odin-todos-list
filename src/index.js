@@ -12,12 +12,7 @@ import "./styles/stylesHeader.css";
 import "./styles/stylesSideBar.css";
 import "./styles/stylesMain.css";
 import "./styles/stylesNewProject.css";
-
-function loadPage(app) {
-    loadHeader();
-    loadSidebar(app);
-    loadMainBody(app);
-}
+import { loadNewProjectModal } from "./modals/newProject.js";
 
 
 const application = new appProjects();
@@ -25,14 +20,13 @@ const application = new appProjects();
 const a1 = new Project("En");
 const a2 = new Project("nJ");
 const a3 = new Project("cbnfdyhduiydfuyfi");
-console.log("test");
 application.addProject(a1);
 application.addProject(a2);
 application.addProject(a3);
-loadPage(application);
+application.loadPage();
 
 application.selectProject(1);
-loadPage(application);
+application.loadPage();
 
 
 
@@ -42,8 +36,7 @@ application.selectedProject.addTask("John3", "Happy", new Date(2025, 12, 1), 3);
 
 application.selectProject(0);
 
-loadPage(application);
+application.loadPage();
 application.selectProject(1);
-loadPage(application);
+application.loadPage();
 
-document.getElementById("newProject").showModal();
