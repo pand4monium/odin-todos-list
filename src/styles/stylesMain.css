@@ -30,3 +30,21 @@
 
     margin: 0px 15px;
 }
+
+#TodoMenu {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+    column-gap: 15px;
+
+    padding: 15px
+}
+
+.task-container {
+    border: 2px black solid;
+    flex: 0 0 0;
+    min-width: 250px;
+    height: 150px;
+}

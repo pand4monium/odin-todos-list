@@ -3,7 +3,7 @@ export class TodoItem {
     constructor(title, description, dueDate, priority) {
         this.title = title;
         this.description = description;
-        this.dueDate = new Date(dueDate.year, dueDate.month, dueDate.day, 0, 0);
+        this.dueDate = dueDate;
         this.priority = priority;
         this.notes = "";
         this.status = 0;

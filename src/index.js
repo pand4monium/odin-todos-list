@@ -19,7 +19,11 @@ console.log("test");
 application.addProject(a1);
 application.addProject(a2);
 application.addProject(a3);
-console.log(application.projectList);
+
+
+application.selectedProject.addTask("John1", "Happy", new Date(2025, 11, 1), 1);
+application.selectedProject.addTask("John2", "Happy", new Date(2025, 12, 1), 2);
+application.selectedProject.addTask("John3", "Happy", new Date(2025, 12, 1), 3);
 
 loadHeader();
 
