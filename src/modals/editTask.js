@@ -1,59 +1,60 @@
-import { Project } from "../class/Project.js"
-import { TodoItem } from "../class/todoItem.js";
+export const loadEditTaskModal = (app, index) => {
 
-export const loadNewTaskModal = (app) => {
-
-    document.getElementById("newTaskModal").innerHTML = `
-        <div id="newTaskModal-container">    
-            <div id="newTaskModal-header">
-                <div> New Task </div>
-                <button id="close-newTaskModal"> X </button>
+    document.getElementById("editTaskModal").innerHTML = `
+        <div id="editTaskModal-container">    
+            <div id="editTaskModal-header">
+                <div> Edit Task </div>
+                <button id="close-editTaskModal"> X </button>
             </div>
             <form id="newTaskForm">
-            <table id="newTaskModal-inputs">
+            <table id="editTaskModal-inputs">
                 <tr>
                     <td> Title: </td>
-                    <td> <input id="newTaskModal-title"
+                    <td> <input id="editTaskModal-title"
+                                value="${app.selectedProject.todoItems[index].title}"
                                 required></input> </td>
                 </tr>
 
-                <tr>
+                  <tr>
                     <td> Description: </td>
-                    <td> <input id="newTaskModal-description"></input> </td>
+                    <td> <input id="editTaskModal-description" value="${app.selectedProject.todoItems[index].description}"></input> </td>
                 </tr>
+
 
                 <tr> 
                     <td> Due Date: </td>
-                    <td> <input id="newTaskModal-dueDate"
+                    <td> <input id="editTaskModal-dueDate"
                                 type="date"
+                                value="${app.selectedProject.todoItems[index].displayDueDateInput}"
                                 required></input> </td>
                 </tr>
 
                 <tr>
                     <td> Priority: </td>
-                    <td> <input id="newTaskModal-priority"
+                    <td> <input id="editTaskModal-priority"
                                 type="number"
                                 min="1"
                                 max="5"
-                                value="1"></input> </td>
+                                value="${app.selectedProject.todoItems[index].priority}"></input> </td>
                 </tr>
             </table>
-            <button id="newTaskModal-submit">Submit</button>
+            <button id="editTaskModal-submit">Submit</button>
             </form>
         </div>
     `
+    console.log(app.selectedProject.todoItems[index].displayDueDateInput);
 
-    const titleInput = document.getElementById("newTaskModal-title");
-    const descriptionInput = document.getElementById("newTaskModal-description");
-    const dueDateInput = document.getElementById("newTaskModal-dueDate");
-    const priorityInput = document.getElementById("newTaskModal-priority");
+    const titleInput = document.getElementById("editTaskModal-title");
+    const descriptionInput = document.getElementById("editTaskModal-description");
+    const dueDateInput = document.getElementById("editTaskModal-dueDate");
+    const priorityInput = document.getElementById("editTaskModal-priority");
     
-    document.getElementById("close-newTaskModal").addEventListener("click", () => {
+    document.getElementById("close-editTaskModal").addEventListener("click", () => {
         titleInput.value = "";
         descriptionInput.value = "";
         dueDateInput.value = "";
         priorityInput.value = "1";
-        document.getElementById("newTaskModal").style.display = "none";
+        document.getElementById("editTaskModal").style.display = "none";
     })
 
     document.getElementById("newTaskForm").addEventListener("submit", (e) => {
@@ -73,7 +74,7 @@ export const loadNewTaskModal = (app) => {
         dueDateInput.value = "";
         priorityInput.value = "1";
         app.loadPage();
-        document.getElementById("newTaskModal").style.display = "none";
+        document.getElementById("editTaskModal").style.display = "none";
     })
 
 }   

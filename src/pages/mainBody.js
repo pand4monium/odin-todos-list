@@ -1,3 +1,5 @@
+import { loadEditTaskModal } from "../modals/editTask";
+
 export const loadMainBody = (appProject) => {
     document.getElementById("projectHeader").innerHTML = `
         <div id="projectName"> ${appProject.selectedProject.name} </div>
@@ -8,4 +10,15 @@ export const loadMainBody = (appProject) => {
         </div>
     `
     document.getElementById("TodoMenu").innerHTML = appProject.selectedProject.displayTask();
+
+    document.getElementById("newTask").addEventListener("click", () => {
+        document.getElementById("newTaskModal").style.display = "block";
+    })
+
+    appProject.selectedProject.todoItems.forEach((task, index) => {
+        document.getElementById(`task-${index}`).addEventListener("click", () => {
+            document.getElementById("editTaskModal").style.display = "block";
+            loadEditTaskModal(appProject, index);
+        })
+    })
 }

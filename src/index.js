@@ -14,6 +14,7 @@ import "./styles/stylesSideBar.css";
 import "./styles/stylesMain.css";
 import "./styles/stylesNewProject.css";
 import "./styles/stylesNewTask.css";
+import "./styles/stylesEditTask.css";
 
 
 const application = new appProjects();
@@ -34,10 +35,7 @@ application.loadPage();
 application.selectedProject.addTask("John1", "Happy buuuuuuuu bucw cqiuvfgkjb ugc   ifj vfg weuigjkhd iguqbfvijb lfabjwojifgiqug  yqvfuhb yqbvcfuh cqodfhqk bhfb qybf oqnbfan oiuqhbf qnbf 8u8g ljqu8fgq iljbojhf gioqjhf nb  gqlfi qblfnk boiaufg qbnfl jbqoiufb q1l1nbpuglijafbv lqkj uqgfoijbqwflmmd  qlc ijh apfu", new Date(2025, 11, 1), 1);
 application.selectedProject.addTask("John2", "Happy", new Date(2025, 12, 1), 2);
 application.selectedProject.addTask("John3", "Happy", new Date(2025, 12, 1), 3);
-
-application.selectProject(0);
-
 application.loadPage();
-application.selectProject(1);
-application.loadPage();
+
+
 

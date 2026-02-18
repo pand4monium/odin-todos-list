@@ -15,6 +15,10 @@ export class TodoItem {
         return format(this.dueDate, "EEE, do MMM yyyy")
     }
 
+    displayDueDateInput() {
+        return format(this.dueDate, "yyyy-MM-do")
+    }
+
     changeStatus() {
         if (this.status === 0) {
             this.status = 1;        

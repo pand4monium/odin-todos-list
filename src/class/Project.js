@@ -8,7 +8,7 @@ export class Project {
     }
 
     addTask(title, description, dueDate, priority) {
-        this.todoItems.push(new TodoItem(title, description, dueDate, priority))
+        this.todoItems.push(new TodoItem(title, description, dueDate, priority));
     }
 
     displayTask() {
