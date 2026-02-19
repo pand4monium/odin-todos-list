@@ -7,9 +7,13 @@ import { loadNewTaskModal } from "../modals/newTask.js";
 
 export class appProjects {
 
-    constructor() {
-        this.projectList = [new Project("Default")];
-        this.selectedProject = this.projectList[0]
+    constructor(data) {
+        if (data) {
+            Object.assign(this, data);
+        } else {
+            this.projectList = [new Project("Default")];
+            this.selectedProject = this.projectList[0];
+        }
     }
 
     addProject(project) {
@@ -26,5 +30,7 @@ export class appProjects {
         loadMainBody(this);
         loadNewProjectModal(this);
         loadNewTaskModal(this);
+
+        localStorage.setItem("todoApplication", JSON.stringify(this));
     }
 }
