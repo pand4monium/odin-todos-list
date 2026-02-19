@@ -40,6 +40,7 @@ export const loadEditTaskModal = (app, index) => {
             </table>
             <button id="editTaskModal-submit">Submit</button>
             </form>
+            <button id="deleteTask">DELETE</button>
         </div>
     `
     console.log(app.selectedProject.todoItems[index].displayDueDateInput());
@@ -67,6 +68,12 @@ export const loadEditTaskModal = (app, index) => {
         app.selectedProject.todoItems[index].description = descriptionInput.value;
         app.selectedProject.todoItems[index].dueDate = formattedDueDateInput;
         app.selectedProject.todoItems[index].priority = priorityInput.value; 
+        app.loadPage();
+        document.getElementById("editTaskModal").style.display = "none";
+    })
+
+    document.getElementById("deleteTask").addEventListener("click", () => {
+        app.selectedProject.todoItems.splice(index, 1);
         app.loadPage();
         document.getElementById("editTaskModal").style.display = "none";
     })

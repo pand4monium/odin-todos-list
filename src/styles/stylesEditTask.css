@@ -12,7 +12,7 @@
     width: 80vw;
     max-width: 500px;
     height: 70vh;
-    max-height: 300px;
+    max-height: 320px;
 
     background-color: #ede;
 }
@@ -67,4 +67,11 @@
     width: 100px;
     text-transform: uppercase;
     margin-left: 30px;
+}
+
+#deleteTask {
+    width: 100px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    margin-top: 15px;
 }
