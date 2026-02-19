@@ -20,7 +20,10 @@ export class Project {
                         <div class="task-dueDate">${item.displayDueDate()}</div>
                         <div class="task-description">${item.description}</div>
                     </div>
-                    <button class="editTask" id="editTask-${i}">Edit</div>
+                    <div>
+                        <button class="editTask" id="editTask-${i}">Edit</button>
+                        <button id="changeStatus-${i}"> ${item.status === 0 ? "DONE" : "NOT DONE"} </button> 
+                    </div>
                 </div>
             `;
         }, ``)

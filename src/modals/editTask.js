@@ -6,7 +6,7 @@ export const loadEditTaskModal = (app, index) => {
                 <div> Edit Task </div>
                 <button id="close-editTaskModal"> X </button>
             </div>
-            <form id="newTaskForm">
+            <form id="editTaskForm">
             <table id="editTaskModal-inputs">
                 <tr>
                     <td> Title: </td>
@@ -57,22 +57,16 @@ export const loadEditTaskModal = (app, index) => {
         document.getElementById("editTaskModal").style.display = "none";
     })
 
-    document.getElementById("newTaskForm").addEventListener("submit", (e) => {
+    document.getElementById("editTaskForm").addEventListener("submit", (e) => {
         e.preventDefault();
          console.log(dueDateInput.value);
         const match = dueDateInput.value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
         console.log(match);
         const formattedDueDateInput = new Date(Number(match[1]), Number(match[2])-1, Number(match[3]));
-        app.selectedProject.addTask(titleInput.value,
-                                                 descriptionInput.value,
-                                                 formattedDueDateInput,
-                                                 priorityInput.value
-        )
-
-        titleInput.value = "";
-        descriptionInput.value = "";
-        dueDateInput.value = "";
-        priorityInput.value = "1";
+        app.selectedProject.todoItems[index].title = titleInput.value;
+        app.selectedProject.todoItems[index].description = descriptionInput.value;
+        app.selectedProject.todoItems[index].dueDate = formattedDueDateInput;
+        app.selectedProject.todoItems[index].priority = priorityInput.value; 
         app.loadPage();
         document.getElementById("editTaskModal").style.display = "none";
     })
