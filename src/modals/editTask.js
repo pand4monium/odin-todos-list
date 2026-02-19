@@ -25,7 +25,7 @@ export const loadEditTaskModal = (app, index) => {
                     <td> Due Date: </td>
                     <td> <input id="editTaskModal-dueDate"
                                 type="date"
-                                value="${app.selectedProject.todoItems[index].displayDueDateInput}"
+                                value="${app.selectedProject.todoItems[index].displayDueDateInput()}"
                                 required></input> </td>
                 </tr>
 
@@ -42,7 +42,7 @@ export const loadEditTaskModal = (app, index) => {
             </form>
         </div>
     `
-    console.log(app.selectedProject.todoItems[index].displayDueDateInput);
+    console.log(app.selectedProject.todoItems[index].displayDueDateInput());
 
     const titleInput = document.getElementById("editTaskModal-title");
     const descriptionInput = document.getElementById("editTaskModal-description");
