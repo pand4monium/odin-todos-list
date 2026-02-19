@@ -1,12 +1,12 @@
 import { loadEditTaskModal } from "../modals/editTask";
 
 export const loadMainBody = (appProject) => {
+    console.log(appProject.projectList.length);
     document.getElementById("projectHeader").innerHTML = `
         <div id="projectName"> ${appProject.selectedProject.name} </div>
         <div id="projectButtons">
             <button id="newTask"> + </button>
-            <button id="renameProject"> RENAME </button>
-            <button id="deleteProject"> DELETE </button>
+            ${appProject.projectList.length === 1 ? "" : `<button id="deleteProject"> DELETE </button>`}
         </div>
     `
     document.getElementById("TodoMenu").innerHTML = appProject.selectedProject.displayTask();
@@ -26,4 +26,15 @@ export const loadMainBody = (appProject) => {
             appProject.loadPage();
         })
     })
+
+    if (appProject.projectList.length != 1) {
+        document.getElementById("deleteProject").addEventListener("click", () => {
+            const index = appProject.projectList.indexOf(appProject.selectedProject);
+            if (index > -1) {
+                appProject.projectList.splice(index, 1);
+            }
+            appProject.selectedProject = appProject.projectList[0];
+            appProject.loadPage();
+        })
+    }
 }
